@@ -1,0 +1,19 @@
+@use '../abstracts/' as *;
+
+.card {
+	// display: flex;
+	padding: 2rem 1.25rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border-color: var(--clr-primary-100);
+	background-color: var(--clr-neutral-50);
+	box-shadow: 0 2px 7px 0 rgba(20, 20, 43, 0.06);
+    -webkit-transition: color 300ms ease, -webkit-transform 300ms ease;
+    transition: color 300ms ease, -webkit-transform 300ms ease;
+    transition: transform 300ms ease, color 300ms ease;
+    transition: transform 300ms ease, color 300ms ease, -webkit-transform 300ms ease;
+    text-decoration: none;
+    -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}

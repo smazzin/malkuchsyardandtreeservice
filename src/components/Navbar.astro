@@ -7,11 +7,8 @@ const abtLink = isHome
   ? '#about'
   : `${Astro.site}#about`
 const ftLink = isHome
-  ? '#features'
-  : `${Astro.site}#features`
-const regLink = isHome
-  ? '#register'
-  : `${Astro.site}#register`
+  ? '#services'
+  : `${Astro.site}#services`
 ---
 <header>
   <div class="container">
@@ -32,7 +29,7 @@ const regLink = isHome
           </li>
       
           <li class="menu-item dropdown">
-            <a class="nav__link" href={ftLink}>Features</a>
+            <a class="nav__link" href={ftLink}>Services</a>
           </li>
       
           <!-- <span id="follow" class="">Follow</span>
