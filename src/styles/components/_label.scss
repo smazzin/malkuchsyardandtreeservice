@@ -2,7 +2,7 @@
   --font-weight: 350;
   display: inline-block;
   font-size: var(--fs-300);
-  color: var(--clr-neutral-800);
+  color: var(--clr-neutral-900);
   width: max-content;
   margin-top: 0;
   margin-right: .25em;
@@ -10,7 +10,7 @@
   & + &::before {
     display: inline-block;
     content: '';
-    border-left: 2px solid var(--clr-neutral-800);
+    border-left: 2px solid var(--clr-neutral-900);
     opacity: .25;
     padding-left: .25em;
     height: 1.25ex;
