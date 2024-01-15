@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+<div id="about" class="">
+  <div class="">
+    <h2 class="">{title}</h2>
+    <div class="">
+      <slot />
+    </div>
+    <img class="" src="/img/undraw_asset_selection_ix3v.svg" alt="AWE.SOME">
+  </div>
+  <div class="">
+    <a class="" href="#features">See How it Works</a>
+  </div>
+</div>

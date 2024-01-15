@@ -1,0 +1,39 @@
+---
+import features from '../../data/features.json'
+
+interface Props {
+  afterTitle?: string,
+  title: string
+}
+
+const { afterTitle, title } = Astro.props
+---
+<div id="features" class="">
+  <div class="">
+    <h2 class="">{title}</h2>
+    <div class="">
+      <slot />
+    </div>
+  </div>
+  <div class="">
+    {features.map((feat) => (
+      <div class="">
+        <div class="">
+          <img src={`/img/features/${feat.icon}`} alt={feat.title} class="" />
+        </div>
+        <div class="">
+          <h3 class="">{feat.title}</h3>
+          <div class="">
+            {feat.content}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="">
+    {afterTitle && <h3 class="">{afterTitle}</h3>}
+  </div>
+  <div class="">
+    <a class="" href="#register">Register Now</a>
+  </div>
+</div>

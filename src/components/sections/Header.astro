@@ -1,0 +1,42 @@
+---
+import Navbar from '../Navbar.astro'
+
+const headerListItems = [
+  'Cool Feature',
+  'Another Feature',
+  'Something Else',
+  'Why Not',
+  'Rotating',
+  'List',
+  'Items Here'
+]
+---
+<header class="header">
+  <Navbar />
+  <div class="">
+    <div class="">
+      <div class="">
+        <h1 class="">
+          New Thing: <span class="">AWE.SOME</span>
+        </h1>
+        <h2 class="">
+          Intro goes here...
+        </h2>
+        <span class="">
+          <ul class="">
+            {headerListItems.map((item) => <li class="">{item}</li>)}
+          </ul>
+        </span>
+        <p class="">...think about it!</p>
+      </div>
+      <div class="">
+        <img src="/img/undraw_Friends_online_re_r7pq.svg" alt="AWE.SOME header">
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <a class="" href="#about">
+      More Information
+    </a>
+  </div>
+</header>

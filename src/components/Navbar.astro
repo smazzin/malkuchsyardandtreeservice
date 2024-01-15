@@ -1,0 +1,35 @@
+---
+import siteData from '../data/site.json'
+
+const pn = Astro.url.pathname
+const isHome = pn === '/'
+const abtLink = isHome
+  ? '#about'
+  : `${Astro.site}#about`
+const ftLink = isHome
+  ? '#features'
+  : `${Astro.site}#features`
+const regLink = isHome
+  ? '#register'
+  : `${Astro.site}#register`
+---
+<nav class="">
+  <div class="">
+    <a href={Astro.site} class="">
+      <img src="/img/logo.svg" alt="AWE.SOME Logo" class="">
+    </a>
+    <button id="menuBtn" class="" type="button" onclick="navToggle();" aria-label="Show Menu">
+      <span class=""></span>
+      <span class=""></span>
+    </button>
+  </div>
+  <div id="menu" class="">
+    <a class="" href={abtLink}>About</a>
+    <a class="" href={ftLink}>Features</a>
+    <span id="follow" class="">Follow</span>
+    {siteData.social.map((scm) => (
+      <a href={scm.url} class="t" target="_blank" rel="noopener">{scm.title}</a>
+    ))}
+    <a class="" href={regLink}>Register Now</a>
+  </div>
+</nav>
