@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -39,10 +38,22 @@ const metadata = {
       Welcome to Malkuch's Yard and Tree Service LLC. With over 15 years of experience in Tree Service and Horticulture, we are dedicated to providing the best service possible. Explore our range of services or get in touch with us today. License bonded and insured.
     </Fragment>
   </Hero>
+  
+  <!-- Content Widget **************** -->
 
-  <!-- Note Widget ******************* -->
+  <Content
+  isAfterContent
+  image={{
+    src: '~/assets/images/grouped-trees.svg',
+    alt: 'Blueprint Image',
+  }}
+>
+  <Fragment slot="content">Experienced arborists providing tree care services</Fragment>
 
-  <!-- <Note /> -->
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-white dark:bg-transparent"></div>
+  </Fragment>
+</Content>
 
   <!-- Features Widget *************** -->
 
@@ -90,6 +101,7 @@ const metadata = {
       },
     ]}
   />
+
 
   <!-- Content Widget **************** -->
 
