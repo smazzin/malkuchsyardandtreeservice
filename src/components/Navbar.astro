@@ -13,23 +13,46 @@ const regLink = isHome
   ? '#register'
   : `${Astro.site}#register`
 ---
-<nav class="">
-  <div class="">
-    <a href={Astro.site} class="">
-      <img src="/img/logo.svg" alt="AWE.SOME Logo" class="">
-    </a>
-    <button id="menuBtn" class="" type="button" onclick="navToggle();" aria-label="Show Menu">
-      <span class=""></span>
-      <span class=""></span>
-    </button>
+<header>
+  <div class="container">
+    <div class="navbar">
+      <a href={Astro.site} class="">
+        Malkuch's Yard and Tree Service
+      </a>
+  
+      <nav id="main-menu-mobile">
+        <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" onclick="navToggle();" aria-label="Show Menu">
+          <span class="hamburger-line hamburger-line-top"></span>
+          <span class="hamburger-line hamburger-line-middle"></span>
+          <span class="hamburger-line hamburger-line-bottom"></span>
+        </button>
+        <ul id="primary-menu" class="menu nav-menu">
+          <li class="menu-item dropdown">
+            <a class="nav__link" href={abtLink}>About</a>
+          </li>
+      
+          <li class="menu-item dropdown">
+            <a class="nav__link" href={ftLink}>Features</a>
+          </li>
+      
+          <!-- <span id="follow" class="">Follow</span>
+          {siteData.social.map((scm) => (
+            <a href={scm.url} class="t" target="_blank" rel="noopener">{scm.title}</a>
+          ))} -->
+          </ul>
+      </nav>
+    </div>
   </div>
-  <div id="menu" class="">
-    <a class="" href={abtLink}>About</a>
-    <a class="" href={ftLink}>Features</a>
-    <span id="follow" class="">Follow</span>
-    {siteData.social.map((scm) => (
-      <a href={scm.url} class="t" target="_blank" rel="noopener">{scm.title}</a>
-    ))}
-    <a class="" href={regLink}>Register Now</a>
+  <div class="mobile-cta">
+    <div class="call-us-cta">
+      <a href="tel:{{siteData.phone}}" class="mobile-btn top-header-phone">
+        Call Us
+      </a>
+    </div>
+    <div class="schedule-service-cta">
+      <a href="tel:{{siteData.phone}}" class="mobile-btn">
+        Schedule Service
+      </a>
+    </div>
   </div>
-</nav>
+</header>
