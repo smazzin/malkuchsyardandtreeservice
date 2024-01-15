@@ -22,7 +22,7 @@
     background-color: var(--clr-primary-400);
     color: var(--clr-neutral-50);
     &:is(:hover, :focus) {
-      background: var(--clr-primary-600);
+      background: var(--clr-primary-500);
       color: var(--clr-neutral-50);
     }
   }
