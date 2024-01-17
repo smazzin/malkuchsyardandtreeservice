@@ -1,11 +1,77 @@
 ---
-import services from '../../data/services.json'
+import { imageConfig } from 'astro:assets'
+import Image from '../Image.astro'
+import { glob } from 'glob'
 
-interface Props {
-  afterTitle?: string,
-  title: string
+async function ImageFetcher(pattern: string) {
+  const files = glob.sync(pattern, { posix: true })
+  const imagePromises = files.map(async (file) => {
+    const src = file.replace('public', '')
+    return { src }
+  })
+
+  const imageFiles = await Promise.all(imagePromises)
+  imageFiles.sort((a, b) => a.src.localeCompare(b.src))
+  return imageFiles
 }
 
-const { afterTitle, title } = Astro.props
-
+const imageFiles = await ImageFetcher('public/img/gallery/*.{jpg,,jpeg,png,webp}')
+const { title, description } = Astro.props
 ---
+
+<section id="gallery">
+  <div class="container margin-block-36">
+    <ul id="my-gallery" class="list gallery">
+      {imageFiles.map((img, index) => (
+        <li class="grid-item hidden" id={`img-${index}`}>
+            <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.src} data-src={img.src}>
+            <Image src={img.src} width={300} height={300} />
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button class="btn" data-type="outline" onclick="previousPage()">Previous</button>
+    <button class="btn" data-type="outline" onclick="nextPage()">Next</button>
+  </div>
+</section>
+
+<script is:inline>
+  // Your existing pagination script
+  const imagesPerPage = 8;
+  let currentPage = 0;
+  let totalImages = document.querySelectorAll('.grid-item').length;
+  let currentImageIndex = -1;
+
+  function showCurrentPage() {
+    const start = currentPage * imagesPerPage;
+    const end = start + imagesPerPage;
+    document.querySelectorAll('.grid-item').forEach((item, index) => {
+      item.classList.toggle('hidden', !(index >= start && index < end));
+    });
+  }
+
+  function nextPage() {
+    currentPage = (currentPage + 1) % Math.ceil(totalImages / imagesPerPage);
+    showCurrentPage();
+  }
+
+  function previousPage() {
+    currentPage = (currentPage - 1 + Math.ceil(totalImages / imagesPerPage)) % Math.ceil(totalImages / imagesPerPage);
+    showCurrentPage();
+  }
+
+  document.addEventListener('DOMContentLoaded', showCurrentPage);
+
+</script>
+
+<script>
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
+
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-gallery',
+  children: 'a',
+  pswpModule: () => import('photoswipe')
+});
+lightbox.init();
+</script>

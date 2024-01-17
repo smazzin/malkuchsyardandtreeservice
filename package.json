@@ -14,8 +14,11 @@
   "license": "MIT",
   "dependencies": {
     "astro": "^4.0.2",
-    "sass": "^1.69.7",
     "autoprefixer": "10.4.16",
-    "cssnano": "6.0.3"
+    "cssnano": "6.0.3",
+    "fast-glob": "3.3.2",
+    "glob": "^10.3.10",
+    "photoswipe": "^5.4.3",
+    "sass": "^1.69.7"
   }
 }
