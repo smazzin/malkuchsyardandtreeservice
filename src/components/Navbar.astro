@@ -9,6 +9,9 @@ const abtLink = isHome
 const ftLink = isHome
   ? '#services'
   : `${Astro.site}#services`
+const ctLink = isHome
+  ? '#contact'
+  : `${Astro.site}#contact`
 ---
 <header class="bg-neutral-900">
   <div class="container">
@@ -34,6 +37,10 @@ const ftLink = isHome
           
           <li class="menu-item dropdown">
             <a class="nav__link" href={abtLink}>About</a>
+          </li>
+     
+          <li class="menu-item dropdown">
+            <a class="nav__link" href={ctLink}>Contact Us</a>
           </li>
       
           <!-- <span id="follow" class="">Follow</span>
