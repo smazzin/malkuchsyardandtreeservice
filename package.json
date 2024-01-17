@@ -15,11 +15,13 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.0.4",
     "astro": "^4.0.2",
+    "astro-purgecss": "^4.0.0",
     "autoprefixer": "10.4.16",
     "cssnano": "6.0.3",
     "fast-glob": "3.3.2",
     "glob": "^10.3.10",
     "photoswipe": "^5.4.3",
+    "purgecss": "^5.0.0",
     "sass": "^1.69.7"
   }
 }
