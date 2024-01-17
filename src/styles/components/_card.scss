@@ -17,3 +17,13 @@
     -webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
+
+.card-alt {
+	// display: flex;
+	padding: 2rem 1.25rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border: 1px solid;
+	border-color: var(--clr-neutral-900);
+}

@@ -1,5 +1,5 @@
 ---
-import services from '../../data/services.json'
+import reviews from '../../data/reviews.json'
 
 interface Props {
   afterTitle?: string,
@@ -9,3 +9,23 @@ interface Props {
 const { afterTitle, title } = Astro.props
 
 ---
+
+<section id="reviews">
+  <!-- Mapping over the reviews -->
+  <div class="container flow">
+    <h2 class="h1 text-center">{title}</h2>
+    <p class="text-center">{ afterTitle }</p>
+    <div class="text-center">
+      <a data-type="accent" class="btn margin-inline-end-16" href="https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic">See all our reviews on <b>Google</b></a>
+    </div>
+    <div class="grid-3 margin-block-20">
+      {reviews.map((review) => (
+        <div class="card-alt flow">
+          <p>{'⭐'.repeat(5)}</p>
+          <p class="text-small">"{review.content}"</p>
+          <p>{review.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
