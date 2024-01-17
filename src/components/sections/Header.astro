@@ -1,14 +1,14 @@
 ---
-// const headerListItems = [
-//   'Cool Feature',
-//   'Another Feature',
-//   'Something Else',
-//   'Why Not',
-//   'Rotating',
-//   'List',
-//   'Items Here'
-// ]
+// Calculate the current year
+const currentYear = new Date().getFullYear();
+
+// Starting year of the experience
+const startYear = 2008;
+
+// Calculate the number of years of experience
+const yearsOfExperience = currentYear - startYear;
 ---
+
 <section>
   <div class="hero">
     <div class="container">
@@ -17,11 +17,8 @@
           <h1 class="text-neutral-50 margin-block-end-16">
             Expert Tree Services in Roseburg and Surrounding Areas
           </h1>
-          <!-- <ul class="">
-            {headerListItems.map((item) => <li class="">{item}</li>)}
-          </ul> -->
           <p class="margin-block-end-16">
-            Welcome to Malkuch's Yard and Tree Service LLC. With over 15 years of experience in Tree Service and Horticulture, we are dedicated to providing the best service possible. Explore our range of services or get in touch with us today. License bonded and insured.
+            Welcome to Malkuch's Yard and Tree Service LLC. With over {yearsOfExperience} years of experience in Tree Service and Horticulture, we are dedicated to providing the best service possible. Explore our range of services or get in touch with us today. License bonded and insured.
           </p>
           <a data-type="accent" class="btn margin-inline-end-16" href="tel:5416437064">(541) 643-7064</a>
         </div>
