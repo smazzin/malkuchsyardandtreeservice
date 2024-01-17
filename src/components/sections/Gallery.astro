@@ -1,33 +1,33 @@
 ---
-import Image from '../Image.astro'
-import { glob } from 'glob'
+import { Image } from 'astro:assets';
+const imageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
 
-async function ImageFetcher(pattern: string) {
-  const files = glob.sync(pattern, { posix: true })
-  const imagePromises = files.map(async (file) => {
-    const src = file.replace('public', '')
-    return { src }
-  })
-
-  const imageFiles = await Promise.all(imagePromises)
-  imageFiles.sort((a, b) => a.src.localeCompare(b.src))
-  return imageFiles
-}
-
-const imageFiles = await ImageFetcher('public/img/gallery/*.{jpg,,jpeg,png,webp}')
 const { title, description } = Astro.props
 ---
 
 <section id="gallery">
   <div class="container margin-block-36">
     <ul id="my-gallery" class="list gallery">
-      {imageFiles.map((img, index) => (
+      <!-- {
+        imageFiles.map((img) => (
+          <Image
+            src={img.default}
+            width="600"
+            alt="Photo of a pizza"
+            class="mb-3 w-full rounded"
+          />
+        ))
+      } -->
+
+      {
+      imageFiles.map((img, index) => (
         <li class="grid-item hidden" id={`img-${index}`}>
-            <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.src} data-src={img.src}>
-            <Image mobileImgUrl={img.src} desktopImgUrl={img.src} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
+            <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.default.src} data-src={img.default.src}>
+            <Image width={300} height={300} src={img.default} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
           </a>
         </li>
-      ))}
+      ))
+      }
     </ul>
     <button class="btn margin-block-start-8" data-type="outline" onclick="previousPage()">Previous</button>
     <button class="btn margin-block-start-8" data-type="outline" onclick="nextPage()">Next</button>
