@@ -42,6 +42,16 @@
   }
 }
 
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  
+  @include mq(medium) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .grid-auto {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

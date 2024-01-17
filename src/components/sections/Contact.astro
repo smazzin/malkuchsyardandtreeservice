@@ -1,6 +1,4 @@
 ---
-import services from '../../data/services.json'
-
 interface Props {
   afterTitle?: string,
   title: string
@@ -9,3 +7,117 @@ interface Props {
 const { afterTitle, title } = Astro.props
 
 ---
+
+<section id="contact">
+  <div class="container-xs flow">
+      <h2 class="h1 text-center">{title}</h2>
+      <p class="text-center">{afterTitle}</p>
+      <div class="text-center">
+        <a class="btn margin-inline-end-16" href="tel:5416437064">(541) 643-7064</a>
+      </div>
+      <form class="contact-form form flow" name="contact" netlify>
+        <div class="form-control">
+          <label for="name" class="form-label">Name</label>
+          <input class="form-input" name="name" type="text" required>
+        </div>
+        <div class="form-control">
+          <label for="phone" class="form-label">Phone number</label>
+          <input class="form-input" name="phone" type="tel" required>
+        </div>
+        <div class="form-control">
+          <label for="address" class="form-label">Address, City, State - where the work will be done</label>
+          <input class="form-input" name="address" type="text" required>
+        </div>
+
+        <div class="form-control">
+          <label for="day" class="form-label">What day would work best for use to meet you at the work site?</label>
+          <select class="form-select" name="day" id="day" required>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+          </select>
+        </div>
+        <!-- what time of day would work best for us to meet you? -->
+        <div class="form-control">
+          <label for="time" class="form-label">What time of day would work best for us to meet you?</label>
+          <select class="form-select" name="time" id="time" required>
+            option values but have it go from 8am to 5pm in increments of 30 minutes
+            <option value="8:00am">8:00am</option>
+            <option value="8:30am">8:30am</option>
+            <option value="9:00am">9:00am</option>
+            <option value="9:30am">9:30am</option>
+            <option value="10:00am">10:00am</option>
+            <option value="10:30am">10:30am</option>
+            <option value="11:00am">11:00am</option>
+            <option value="11:30am">11:30am</option>
+            <option value="12:00pm">12:00pm</option>
+            <option value="12:30pm">12:30pm</option>
+            <option value="1:00pm">1:00pm</option>
+            <option value="1:30pm">1:30pm</option>
+            <option value="2:00pm">2:00pm</option>
+            <option value="2:30pm">2:30pm</option>
+            <option value="3:00pm">3:00pm</option>
+            <option value="3:30pm">3:30pm</option>
+            <option value="4:00pm">4:00pm</option>
+            <option value="4:30pm">4:30pm</option>
+            <option value="5:00pm">5:00pm</option>
+          </select>
+        </div>
+        <p>Which services will you need?</p>
+        <div class="grid-auto">
+          <div class="form-checkbox">
+            <label for="tree-removal" class="checkbox-container">
+              Tree removal
+              <input type="checkbox" name="services" id="tree-removal" value="tree-removal">
+              <span class="checkmark"></span>
+            </label>
+          </div>  
+            <div class="form-checkbox">
+              <label for="tree-trimming" class="checkbox-container">
+                Tree trimming / Pruning
+                <input type="checkbox" name="tree-trimming-pruning" id="tree-trimming" value="tree-trimming-pruning">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-checkbox">
+              <label for="stump-grinding" class="checkbox-container">
+                Stump grinding
+                <input type="checkbox" name="strump-grinding" id="stump-grinding" value="stump-grinding">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-checkbox">
+              <label for="log-hauling" class="checkbox-container">
+                Log Hauling
+                <input type="checkbox" name="log-hauling" id="log-hauling" value="log-hauling">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-checkbox">
+              <label for="tree-plant-healthcare" class="checkbox-container">
+                Tree / Plant Healthcare
+                <input type="checkbox" name="services" id="tree-plant-healthcare" value="tree-plant-healthcare">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="form-checkbox">
+              <label for="other" class="checkbox-container">
+                Other
+                <input type="checkbox" name="services" id="other" value="other">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+        </div>
+        <div class="form-control">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-input" name="message" id="message" cols="30" rows="5" placeholder="Share any additional details..."></textarea>
+        </div>
+
+        <div class="text-center">
+          <button class="btn" data-type="accent">Submit</button>
+        </div>
+      </form>
+  </div>
+</section>
