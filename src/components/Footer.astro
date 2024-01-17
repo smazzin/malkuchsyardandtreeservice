@@ -1,6 +1,7 @@
 ---
 import siteData from '../data/site.json'
-
+// Calculate the current year
+const currentYear = new Date().getFullYear();
 const pn = Astro.url.pathname
 const isHome = pn === '/'
 const abtLink = isHome
@@ -10,55 +11,32 @@ const ftLink = isHome
   ? '#features'
   : `${Astro.site}#features`
 ---
-<footer class="">
-  <div class="">
-    <ul class="">
-      {siteData.social.map((scm) => (
-        <li>
-          <a class="" href={scm.url} target="_blank" rel="_noopener">{scm.title}</a>
+<footer>
+  <div class="container">
+    <!-- <div class="">
+      <ul class="">
+        {siteData.social.map((scm) => (
+          <li>
+            <a class="" href={scm.url} target="_blank" rel="_noopener">{scm.title}</a>
+          </li>
+        ))}
+      </ul>
+    </div> -->
+    <div class="text-center h3">{siteData.author}</div>
+    <div class="text-center">
+      <ul class="list text-center justify-content-center d-flex">
+        <li class="margin-inline-8">
+          <a class="" href={ftLink}>Services</a>
         </li>
-      ))}
-    </ul>
-  </div>
-  <div class=""></div>
-  <div class="">
-    <ul class="list-none">
-      <li>
-        <a class="" href={abtLink}>About</a>
-      </li>
-      <li>
-        <a class="" href={ftLink}>Features</a>
-      </li>
-    </ul>
-  </div>
-  <div class=""></div>
-  <div class="">
-    <ul class="list-none">
-      <li>
-        <a class="" href="/privacy">Privacy</a>
-      </li>
-      <li>
-        <a class="" href="/imprint">Imprint</a>
-      </li>
-    </ul>
+        <li class="margin-inline-8">
+          <a class="" href={abtLink}>About</a>
+        </li>
+      </ul>
+      <span class="">
+        &copy; {currentYear} {siteData.author}
+      </span>
+    </div>
   </div>
 </footer>
 <div class="">
-  <span class="">
-    &copy; {siteData.author}
-  </span>
 </div>
-<div class="">
-  <a id="btt" class="" href="#top" title="Back to Top">UP</a>
-</div>
-<div class="">
-  <a href="https://github.com/ttntm/astro-landing-page" target="_blank" rel="noopener" title="Get this theme @ GitHub" class="">
-    <img src="/img/github.svg" width="30" height="30" class="" alt="GitHub icon">
-  </a>
-</div>
-<!-- "Follow" Tooltip template -->
-<template id="followTip">
-  {siteData.social.map((scm) => (
-    <a href={scm.url} class="" target="_blank" rel="noopener">{scm.title}</a>
-  ))}
-</template>
