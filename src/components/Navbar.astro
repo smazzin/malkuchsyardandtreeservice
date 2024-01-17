@@ -10,7 +10,7 @@ const ftLink = isHome
   ? '#services'
   : `${Astro.site}#services`
 ---
-<header>
+<header class="bg-neutral-900">
   <div class="container">
     <div class="navbar">
       <a href={Astro.site} class="">
@@ -25,11 +25,15 @@ const ftLink = isHome
         </button>
         <ul id="primary-menu" class="menu nav-menu">
           <li class="menu-item dropdown">
-            <a class="nav__link" href={abtLink}>About</a>
+            <a class="nav__link" href=tel:5416437064>(541) 643-7064</a>
           </li>
-      
+       
           <li class="menu-item dropdown">
             <a class="nav__link" href={ftLink}>Services</a>
+          </li>
+          
+          <li class="menu-item dropdown">
+            <a class="nav__link" href={abtLink}>About</a>
           </li>
       
           <!-- <span id="follow" class="">Follow</span>
@@ -38,17 +42,20 @@ const ftLink = isHome
           ))} -->
           </ul>
       </nav>
+      <div class="navbar-btn-wrapper">
+        <span class="text-neutral-50">Oregon CCB #230732 </span>
+      </div>
     </div>
   </div>
   <div class="mobile-cta">
-    <div class="call-us-cta">
-      <a href="tel:{{siteData.phone}}" class="mobile-btn top-header-phone">
-        Call Us
-      </a>
+    <div class="oregon-ccb">
+      <span class="mobile-btn top-header-phone">
+        Oregon CCB #230732
+      </span>
     </div>
     <div class="schedule-service-cta">
-      <a href="tel:{{siteData.phone}}" class="mobile-btn">
-        Schedule Service
+      <a href="tel:5416437064" class="mobile-btn text-neutral-50">
+        (541) 643-7064
       </a>
     </div>
   </div>

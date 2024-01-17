@@ -21,10 +21,6 @@
   padding: 1rem 0;
 }
 
-.top-header-phone {
-  text-decoration: none;
-}
-
 .navbar-btn-wrapper {
   // hide on mobile
   display: none;
@@ -46,9 +42,9 @@
   }
 }
 
-.call-us-cta {
+.oregon-ccb {
   background-color: var(--clr-neutral-100);
-  color: var(--clr-neutral-50);
+  color: var(--clr-neutral-900);
   max-width: 100%;
   width: 100%;
   flex-basis: 0%;
@@ -72,6 +68,17 @@
   padding-bottom: 1em;
   align-items: center;
   justify-content: space-between;
+
+  a {
+    color: var(--clr-neutral-50);
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 1.25rem;
+    transition: all .25s ease-in; 
+    &:hover {
+      color: var(--clr-primary-400);
+    }
+  }
 }
 
 
@@ -171,7 +178,7 @@
   }
   
   .menu-item a {
-    color: var(--clr-neutral-900);
+    color: var(--clr-neutral-50);
     --font-weight: 300;
     text-decoration: none;
     display: flex;
