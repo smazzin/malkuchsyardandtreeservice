@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import services from '../../data/services.json'
 
 interface Props {
@@ -20,7 +21,7 @@ const otherServices = services.slice(4);
         {title}
       </h2>
       <div class="">
-        <img src="/img/grouped-trees.svg" alt="Astro" class="w-32 h-32" />
+        <img src="/img/grouped-trees.svg" alt="Astro" width="617" height="312" />
       </div>
     </div>
     
@@ -31,7 +32,7 @@ const otherServices = services.slice(4);
         {subgridServices.map(service => (
           <div class="card">
             <div class="flow">
-              <img class="card-image" src={`/img/services/${service.icon}`} alt={service.title} />
+              <Image src={`/src/img/services/${service.icon}`} alt={service.title} width={298} height={167} />
               <h3 class="h4">{service.title}</h3>
               <p class="text-small">{service.content}</p>
             </div>
@@ -39,16 +40,16 @@ const otherServices = services.slice(4);
         ))}
       </div>
 
-              <!-- Grid for the tree trimming service -->
-              {otherServices.map(service => (
-                <div class="side card">
-                  <div class="flow">
-                    <img src={`/img/services/${service.icon}`} alt={service.title} />
-                    <h3 class="h2">{service.title}</h3>
-                    <p>{service.content}</p>
-                  </div>
-                </div>
-              ))}
+      <!-- Grid for the tree trimming service -->
+      {otherServices.map(service => (
+        <div class="side card">
+          <div class="flow">
+            <Image src={`/src/img/services/${service.icon}`} alt={service.title} width={636} height={357} />
+            <h3 class="h2">{service.title}</h3>
+            <p>{service.content}</p>
+          </div>
+        </div>
+      ))}
 
     </div>
 
