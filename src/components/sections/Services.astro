@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import services from '../../data/services.json'
 
 interface Props {
@@ -32,7 +31,7 @@ const otherServices = services.slice(4);
         {subgridServices.map(service => (
           <div class="card">
             <div class="flow">
-              <Image src={`/src/img/services/${service.icon}`} alt={service.title} width={298} height={167} />
+              <img class="card-image" src={`/img/services/${service.icon}`} alt={service.title} width="298" height="167" />
               <h3 class="h4">{service.title}</h3>
               <p class="text-small">{service.content}</p>
             </div>
@@ -44,7 +43,7 @@ const otherServices = services.slice(4);
       {otherServices.map(service => (
         <div class="side card">
           <div class="flow">
-            <Image src={`/src/img/services/${service.icon}`} alt={service.title} width={636} height={357} />
+            <img src={`/img/services/${service.icon}`} alt={service.title} width="636" height="357" />
             <h3 class="h2">{service.title}</h3>
             <p>{service.content}</p>
           </div>
