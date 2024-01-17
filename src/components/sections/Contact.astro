@@ -15,7 +15,12 @@ const { afterTitle, title } = Astro.props
       <div class="text-center">
         <a class="btn margin-inline-end-16" href="tel:+1-541-643-7064">(541) 643-7064</a>
       </div>
-      <form class="contact-form form flow" name="contact" netlify>
+      <form class="contact-form form flow" name="contact" method="POST" data-netlify="true">
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
         <div class="form-control">
           <label for="name" class="form-label">Name</label>
           <input class="form-input" name="name" type="text" required>
@@ -43,7 +48,6 @@ const { afterTitle, title } = Astro.props
         <div class="form-control">
           <label for="time" class="form-label">What time of day would work best for us to meet you?</label>
           <select class="form-select" name="time" id="time" required>
-            option values but have it go from 8am to 5pm in increments of 30 minutes
             <option value="8:00am">8:00am</option>
             <option value="8:30am">8:30am</option>
             <option value="9:00am">9:00am</option>
@@ -70,14 +74,14 @@ const { afterTitle, title } = Astro.props
           <div class="form-checkbox">
             <label for="tree-removal" class="checkbox-container">
               Tree removal
-              <input type="checkbox" name="services" id="tree-removal" value="tree-removal">
+              <input type="checkbox" name="tree-removal" id="tree-removal" value="tree-removal" netlify-honeypot="bot-field">
               <span class="checkmark"></span>
             </label>
           </div>  
             <div class="form-checkbox">
-              <label for="tree-trimming" class="checkbox-container">
+              <label for="tree-trimming-pruning" class="checkbox-container">
                 Tree trimming / Pruning
-                <input type="checkbox" name="tree-trimming-pruning" id="tree-trimming" value="tree-trimming-pruning">
+                <input type="checkbox" name="tree-trimming-pruning" id="tree-trimming-pruning" value="tree-trimming-pruning">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -98,14 +102,14 @@ const { afterTitle, title } = Astro.props
             <div class="form-checkbox">
               <label for="tree-plant-healthcare" class="checkbox-container">
                 Tree / Plant Healthcare
-                <input type="checkbox" name="services" id="tree-plant-healthcare" value="tree-plant-healthcare">
+                <input type="checkbox" name="tree-plant-healthcare" id="tree-plant-healthcare" value="tree-plant-healthcare">
                 <span class="checkmark"></span>
               </label>
             </div>
             <div class="form-checkbox">
               <label for="other" class="checkbox-container">
                 Other
-                <input type="checkbox" name="services" id="other" value="other">
+                <input type="checkbox" name="other" id="other" value="other">
                 <span class="checkmark"></span>
               </label>
             </div>
