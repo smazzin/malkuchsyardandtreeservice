@@ -18,9 +18,10 @@ const { afterTitle, title } = Astro.props
       <form class="contact-form form flow" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <p class="hidden">
           <label>
-            Don’t fill this out if you’re human: <input name="bot-field" />
+            Don't fill this out if you're human: <input name="bot-field" />
           </label>
         </p>
+        <input type="hidden" name="subject" value="Inquiry from malkuchsyardandtreeservice.com" />
         <div class="form-control">
           <label for="name" class="form-label">Name</label>
           <input class="form-input" name="name" type="text" required>
