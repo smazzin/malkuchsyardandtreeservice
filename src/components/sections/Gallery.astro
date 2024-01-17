@@ -25,7 +25,7 @@ const { title, description } = Astro.props
       {imageFiles.map((img, index) => (
         <li class="grid-item hidden" id={`img-${index}`}>
             <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.src} data-src={img.src}>
-            <Image src={img.src} width={300} height={300} />
+            <Image src={img.src} width={300} height={300} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
           </a>
         </li>
       ))}
@@ -65,13 +65,13 @@ const { title, description } = Astro.props
 </script>
 
 <script>
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
 
-const lightbox = new PhotoSwipeLightbox({
-  gallery: '#my-gallery',
-  children: 'a',
-  pswpModule: () => import('photoswipe')
-});
-lightbox.init();
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#my-gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe')
+  });
+  lightbox.init();
 </script>
