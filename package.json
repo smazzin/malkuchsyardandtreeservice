@@ -13,6 +13,7 @@
   "author": "ttntm",
   "license": "MIT",
   "dependencies": {
+    "@astrojs/sitemap": "^3.0.4",
     "astro": "^4.0.2",
     "autoprefixer": "10.4.16",
     "cssnano": "6.0.3",
