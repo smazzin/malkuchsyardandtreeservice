@@ -3,4 +3,4 @@
 const { src, alt, width, height, Class } = Astro.props;
 ---
 
-<img class={Class} src={src} alt={alt} style={{ width: width ? `${width}px` : 'auto', height: height ? `${height}px` : 'auto' }} />
+<img class={Class} src={src} alt={alt} width={width} height={height} style={{ width: width ? `${width}px` : 'auto', height: height ? `${height}px` : 'auto' }} />
