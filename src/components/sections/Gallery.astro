@@ -1,5 +1,4 @@
 ---
-import { imageConfig } from 'astro:assets'
 import Image from '../Image.astro'
 import { glob } from 'glob'
 
@@ -25,7 +24,7 @@ const { title, description } = Astro.props
       {imageFiles.map((img, index) => (
         <li class="grid-item hidden" id={`img-${index}`}>
             <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.src} data-src={img.src}>
-            <Image src={img.src} width={300} height={300} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
+            <Image mobileImgUrl={img.src} desktopImgUrl={img.src} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
           </a>
         </li>
       ))}
