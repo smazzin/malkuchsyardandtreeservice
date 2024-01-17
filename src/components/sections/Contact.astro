@@ -64,51 +64,55 @@ const { afterTitle, title } = Astro.props
             <option value="5:00pm">5:00pm</option>
           </select>
         </div>
-        <p>Which services will you need?</p>
-        <div class="grid-auto">
-          <div class="form-checkbox">
-            <label for="tree-removal" class="checkbox-container">
-              Tree removal
-              <input type="checkbox" name="services" id="tree-removal" value="Tree removal">
-              <span class="checkmark"></span>
-            </label>
-          </div>  
+        <fieldset>
+          <legend>
+            Which services will you need?
+          </legend>
+          <div class="grid-auto">
             <div class="form-checkbox">
-              <label for="tree-trimming-pruning" class="checkbox-container">
-                Tree trimming / Pruning
-                <input type="checkbox" name="services" id="tree-trimming-pruning" value="Tree trimming / Pruning">
+              <label for="tree-removal" class="checkbox-container">
+                Tree removal
+                <input type="checkbox" name="services" id="tree-removal" value="Tree removal">
                 <span class="checkmark"></span>
               </label>
-            </div>
-            <div class="form-checkbox">
-              <label for="stump-grinding" class="checkbox-container">
-                Stump grinding
-                <input type="checkbox" name="services" id="stump-grinding" value="Stump grinding">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div class="form-checkbox">
-              <label for="log-hauling" class="checkbox-container">
-                Log Hauling
-                <input type="checkbox" name="services" id="log-hauling" value="Log Hauling">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div class="form-checkbox">
-              <label for="tree-plant-healthcare" class="checkbox-container">
-                Tree / Plant Healthcare
-                <input type="checkbox" name="services" id="tree-plant-healthcare" value="Tree / Plant Healthcare">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <div class="form-checkbox">
-              <label for="other" class="checkbox-container">
-                Other
-                <input type="checkbox" name="services" id="other" value="Other">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-        </div>
+            </div>  
+              <div class="form-checkbox">
+                <label for="tree-trimming-pruning" class="checkbox-container">
+                  Tree trimming / Pruning
+                  <input type="checkbox" name="services" id="tree-trimming-pruning" value="Tree trimming / Pruning">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label for="stump-grinding" class="checkbox-container">
+                  Stump grinding
+                  <input type="checkbox" name="services" id="stump-grinding" value="Stump grinding">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label for="log-hauling" class="checkbox-container">
+                  Log Hauling
+                  <input type="checkbox" name="services" id="log-hauling" value="Log Hauling">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label for="tree-plant-healthcare" class="checkbox-container">
+                  Tree / Plant Healthcare
+                  <input type="checkbox" name="services" id="tree-plant-healthcare" value="Tree / Plant Healthcare">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label for="other" class="checkbox-container">
+                  Other
+                  <input type="checkbox" name="services" id="other" value="Other">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+          </div>
+        </fieldset>
         <div class="form-control">
           <label for="message" class="form-label">Message</label>
           <textarea class="form-input" name="message" id="message" cols="30" rows="5" placeholder="Share any additional details..."></textarea>
