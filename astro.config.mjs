@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
-import partytown from '@astrojs/partytown'
 import purgecss from 'astro-purgecss';
 const baseURL = process.env.NODE_ENV === 'production' ? 'https://malkuchsyardandtreeservice.com/' : 'http://localhost:4321/';
 
@@ -16,11 +15,6 @@ export default defineConfig({
       content: [
         process.cwd() + '/src/pages/**/*.astro',
       ]
-    }),
-		partytown({
-			config: {
-			  forward: ["dataLayer.push"],
-			},
-		}),
+    })
   ]
 });
