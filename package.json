@@ -13,6 +13,7 @@
   "author": "ttntm",
   "license": "MIT",
   "dependencies": {
+    "@astrojs/partytown": "^2.0.4",
     "@astrojs/sitemap": "^3.0.4",
     "astro": "^4.0.2",
     "astro-purgecss": "^4.0.0",
