@@ -114,3 +114,25 @@ $size-value in $sizes {
 .hidden {
 	display: none;
 }
+
+.facebook {
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 1.75rem;
+		height: 1.75rem;
+		background: url("../img/facebook.svg") no-repeat center center;
+		background-size: contain;
+	}
+}
+
+.instagram {
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 1.75rem;
+		height: 1.75rem;
+		background: url("../img/instagram.svg") no-repeat center center;
+		background-size: contain;
+	}
+}
