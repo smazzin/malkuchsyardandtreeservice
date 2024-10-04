@@ -1,0 +1,86 @@
+---
+import Image from '~/components/common/Image.astro';
+import Button from '~/components/ui/Button.astro';
+import Background from '~/components/ui/Background.astro';
+
+import type { Hero as Props } from '~/types';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+
+  content = await Astro.slots.render('content'),
+  actions = await Astro.slots.render('actions'),
+  image = await Astro.slots.render('image'),
+
+  id,
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<section class="relative px-[5%] not-prose" {...id ? { id } : {}}>
+  <div class="container">
+    <div class="flex max-h-[60rem] items-center py-16 md:py-24 lg:py-48">
+      <div class="max-w-md">
+        {
+          tagline && (
+            <p
+              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              set:html={tagline}
+            />
+          )
+        }
+        {
+          title && (
+            <h1
+              class="mb-5 text-4xl font-bold text-white md:mb-6 md:text-3xl lg:text-4xl"
+              set:html={title}
+            />
+          )
+        }
+        {subtitle && <p class="text-base text-white md:text-md" set:html={subtitle} />}
+        {
+          actions && (
+          <div class="mt-6 flex gap-x-4 md:mt-8">
+              {Array.isArray(actions) ? (
+                actions.map((action) => (
+                  <div class="flex w-full sm:w-auto">
+                    <Button {...(action || {})} class="w-full sm:mb-0" />
+                  </div>
+                ))
+              ) : (
+                <Fragment set:html={actions} />
+              )}
+            </div>
+          )
+        }
+        {content && <Fragment set:html={content} />}
+      </div>
+    </div>
+  </div>
+  {
+    image && (
+      <div class="absolute inset-0 -z-10">
+        {typeof image === 'string' ? (
+          <Fragment set:html={image} />
+        ) : (
+          <Image
+            class="size-full object-cover"
+            layout="cover"
+            widths={[400, 768, 1024, 2040]}
+            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+            loading="eager"
+            width={1440}
+            height={900}
+            {...image}
+          />
+        )}
+        <div class="absolute inset-0 bg-black/50"></div>
+        <slot name="bg">
+          {bg ? <Fragment set:html={bg} /> : null}
+        </slot>
+      </div>
+    )
+  }
+</section>
