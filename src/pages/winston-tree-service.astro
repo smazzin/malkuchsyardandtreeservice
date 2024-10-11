@@ -1,0 +1,109 @@
+---
+import HeroAlt from '~/components/widgets/HeroAlt.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Winston, OR Tree Service | Tree Removal Experts',
+	description: 'Complete tree care in Winston, OR. We offer professional tree removal, tree trimming, stump grinding, and more. Call us today for a free estimate!',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroAlt
+    tagline="Professional & Safe"
+    image={{
+      src: '~/assets/images/wildlife-safari.jpg',
+      alt: 'Picture of Wildlife Safari Near Winston, OR',
+    }}
+    title="Expert Tree Services in Winston, OR"
+    subtitle="We offer professional and safe tree services in Winston, OR and surrounding areas. Located just 7 miles southwest of Roseburg, Winston is a small town in Douglas County Oregon. Home to Wildlife Safari, a drive-through safari and zoological park. The park's main draw are the 615-acre pastures where visitors drive through, which enable many up-close animal encounters."
+    actions={[
+      {
+        target: '',
+        text: 'Get a Free Estimate',
+        href: '/get-a-free-estimate',
+        icon: 'tabler:chevron-right',
+        variant: 'primary',
+      },
+    ]}
+  />
+
+    <!-- Steps2 Widget ****************** -->
+
+    <Steps2
+    title="What We Offer As Professional Arborists"
+    isReversed={false}
+    callToAction={{
+      text: 'Get a Free Estimate',
+      href: '/get-a-free-estimate',
+    }}
+    items={[
+      {
+        title: 'Complete Tree Removals',
+        description: 'Are you needing a tree removed from your property? We offer complete tree removals for residential and commercial properties.',
+        icon: 'tabler:christmas-tree',
+      },
+      {
+        title: 'Tree Trimming & Pruning',
+        description:
+          'Help maintain the health and beauty of your trees with our professional tree trimming and pruning services. We offer tree trimming for all types of trees.',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        title: 'Stump Grinding',
+        description:
+          'We offer professional stump grinding services in Winston, OR. We can remove stumps of all sizes, leaving your property looking clean and tidy.',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        title: 'Tree Cabling & Bracing',
+        description:
+          'Our skilled arborists can help protect your trees from storm damage with our tree cabling and bracing services. Call us today for a free estimate.',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        title: 'Tree Health & Insect Control',
+        description:
+          'For control of insects and diseases. We can help keep your trees healthy and thriving all year long.',
+          icon: 'tabler:christmas-tree',
+      },
+    ]}
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>

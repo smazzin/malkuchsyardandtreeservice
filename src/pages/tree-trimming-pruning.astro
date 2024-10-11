@@ -1,0 +1,105 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Expert tree trimming & pruning in Roseburg, OR and near you',
+	description: 'Expert Tree Trimming in Roseburg, OR. We are a local tree service company that offers tree removal, tree trimming, stump grinding, and more. Call us today for a free estimate.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Healthy & Safe Trees"
+    title="Roseburg, OR Tree Trimming & Pruning Experts"
+    subtitle="Our tree trimming and pruning services help maintain the health and aesthetics of your trees. Serving Roseburg, OR and surrounding areas. Call us today for a free estimate."
+    actions={[
+      { variant: 'primary', text: 'Get a FREE Estimate', href: 'get-a-free-estimate', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: '~/assets/images/services/tree-trimming-pruning.jpg',
+      alt: 'Tree Pruning Image',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+
+    image={{
+      src: '~/assets/images/tree-trimming-pruning-2.jpg',
+      alt: 'Professional tree trimming & pruning services in Roseburg, OR',
+    }}
+    callToAction={{
+      target: '_self',
+      text: 'Get a FREE Estimate',
+      href: 'get-a-free-estimate',
+      icon: 'tabler:square-rounded-arrow-right',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Do Your Trees Need Pruning?</h3>
+      <p class="text-xl text-muted mb-6 dark:text-slate-300">Trees with proper pruning can have better overall health, structure, and appearance. Your trees can grow to their full potential with the assistance of our arborist.</p>
+    </Fragment>
+  </Content>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions about tree trimming & pruning in Roseburg, OR and surrounding areas."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Is summertime a good time to prune your deciduous trees?',
+        description:
+          "The answer to that is actually no. It's best to prune deciduous trees during the dormant season. Too much pruning in the summertime can actually kill the tree. If you want the long scientific explanation for why that is, have us come out and give you a estimate, I'll be happy to explain it.",
+      },
+      {
+        title: 'When should I prune my trees?',
+        description:
+          'All trees have an energy budget for foliage and growth. Over pruning and pruning the wrong time of year can wreck that energy budget and cause your plants and trees to slow down in their growth. This is especially true of fruit bearing trees that should be pruned every year between November and March. If you are not sure what needs to be done with your trees or shrubs give us a call we would love to help.',
+      },
+    ]}
+  />
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>

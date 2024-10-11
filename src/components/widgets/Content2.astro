@@ -41,10 +41,10 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl dark:text-slate-400',
     }}
   />
-  <div class="mx-auto max-w-7xl p-4 md:px-8">
-    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
+  <div class="mx-auto max-w-7xl md:px-8">
+    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16 items-center`}>
       <div class="md:basis-1/2 self-center">
-        {content && <div class="mb-12 text-lg" set:html={content} />}
+        {content && <div class="text-lg" set:html={content} />}
 
         {
           callToAction && (
@@ -63,7 +63,7 @@ const {
             panel: 'max-w-none',
             title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
             description: 'dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-primary dark:bg-green-700 text-gray-50 p-1',
+            icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
             action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
           }}
         />
@@ -76,9 +76,8 @@ const {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class="mx-auto w-full rounded-lg shadow-lg"
-                  width={500}
-                  height={500}
+                  width={617}
+                  height={312}
                   widths={[400, 768]}
                   sizes="(max-width: 768px) 100vw, 432px"
                   layout="responsive"

@@ -1,17 +1,17 @@
 ---
 import siteData from '../data/site.json'
-import Navbar from '../components/Navbar.astro'
+// import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import Head from '../components/Head.astro'
 import JS from '../components/JS.astro'
-import '../styles/style.scss'
+// import '../styles/style.scss'
 ---
 <html lang={siteData.language}>
   <Head />
   <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3TB6T6G"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <Navbar />
+    <!-- <Navbar /> -->
     <slot />
     <Footer />
     <JS />

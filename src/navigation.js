@@ -7,23 +7,23 @@ export const headerData = {
       links: [
         {
           text: 'Tree Removal',
-          href: getPermalink('/roof-replacement'),
+          href: getPermalink('/tree-removal'),
         },
         {
           text: 'Tree Trimming & Pruning',
-          href: getPermalink('/residential-roofing'),
+          href: getPermalink('/tree-trimming-pruning'),
         },
         {
           text: 'Stump Grinding',
-          href: getPermalink('/commercial-roofing'),
+          href: getPermalink('/stump-grinding'),
         },
         {
           text: 'Tree Cabling & Bracing',
-          href: getPermalink('/metal-roofing'),
+          href: getPermalink('/tree-cabling-bracing'),
         },
         {
           text: 'Tree Health & Insect Control Treatments',
-          href: getPermalink('/roof-repair'),
+          href: getPermalink('/tree-health-insect-control'),
         },
       ],
     },
@@ -32,23 +32,19 @@ export const headerData = {
       links: [
         {
           text: 'Roseburg, OR',
-          href: getPermalink('/service-areas/roofing-jupiter-fl'),
+          href: getPermalink('/roseburg-tree-service'),
         },
         {
           text: 'Glide, OR',
-          href: getPermalink('/service-areas/roofing-ft-lauderdale-fl'),
+          href: getPermalink('/glide-tree-service'),
         },
         {
           text: 'Sutherlin, OR',
-          href: getPermalink('/service-areas/roofing-hobe-sound-fl'),
+          href: getPermalink('/sutherlin-tree-service'),
         },
         {
           text: 'Winston, OR',
-          href: getPermalink('/service-areas/roofing-port-st-lucie-fl'),
-        },
-        {
-          text: 'Green, OR',
-          href: getPermalink('/service-areas/roofing-palm-beach-gardens-fl'),
+          href: getPermalink('/winston-tree-service'),
         },
       ],
     },
@@ -59,12 +55,12 @@ export const headerData = {
   ],
   actions: [
     {
-      text: 'Get a FREE Estimate', href: 'request-a-free-roofing-estimate', class: 'outline', target: '_self'
+      text: 'Get a FREE Estimate', href: 'get-a-free-estimate', class: 'outline', target: '_self'
     },
   ],
   actionsAlt: [
     {
-      text: 'Call Us (561) 719-1208', href: 'tel:561-719-1208', target: '_self'
+      text: 'Call Us (541) 643-7064', href: 'tel:541-643-7064', target: '_self'
     }
   ],
 };
@@ -74,11 +70,11 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'Residential Roofing', href: '/residential-roofing' },
-        { text: 'Commercial Roofing', href: '/commercial-roofing' },
-        { text: 'Metal Roofing', href: '/metal-roofing' },
-        { text: 'Roof Repair', href: '/roof-repair' },
-        { text: 'Roof Replacement', href: '/roof-replacement' },
+        { text: 'Tree Removal', href: '/tree-removal' },
+        { text: 'Tree Trimming & Pruning', href: '/tree-trimming-pruning' },
+        { text: 'Stump Grinding', href: '/stump-grinding' },
+        { text: 'Tree Cabling & Bracing', href: '/tree-cabling-bracing' },
+        { text: 'Tree Health & Insect Control Treatments', href: '/tree-health-insect-control' },
       ],
     },
     {
@@ -91,25 +87,25 @@ export const footerData = {
     {
       title: 'Contact',
       links: [
-        { text: 'Jupiter, FL', href: '#' },
-        { text: '(561) 719-1208', href: 'tel:561-719-1208' },
-        { text: 'info@rareymannroofing.com', href: 'mailto:info@rareymannroofing.com' },
+        { text: 'Roseburg, OR'},
+        { text: '(541) 643-7064', href: 'tel:541-643-7064' },
+        // { text: 'info@malkuchsyardandtreeservice.com', href: 'mailto:malkuchsyardandtreeservice.com' },
       ],
     }
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
+  // secondaryLinks: [
+  //   { text: 'Terms', href: getPermalink('/terms') },
+  //   { text: 'Privacy Policy', href: getPermalink('/privacy') },
+  // ],
   socialLinks: [
     //{ ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/malkuchs_tree_service/' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/MalkuchsYardAndTreeService' },
     //{ ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     //{ ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
   ],
   footNote: `
-    <img class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm" src="https://digitalcloudnw.com/favicon-32x32.png" alt="onWidget logo" loading="lazy"></img>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://digitalcloudnw.com/"> Digital Cloud</a> · All rights reserved.
+  &copy; ${new Date().getFullYear()} Malkuch's Tree Service.
+    All rights reserved.
   `,
 };

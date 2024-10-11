@@ -1,47 +1,53 @@
 ---
-interface Props {
-  afterTitle?: string,
-  title: string
-}
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import type { Contact as Props } from '~/types';
 
-const { afterTitle, title } = Astro.props
+const { 
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props
 
 ---
 
-<section id="contact">
-  <div class="container-xs flow">
-      <h2 class="h1 text-center">{title}</h2>
-      <p class="text-center">{afterTitle}</p>
-      <div class="text-center">
-        <a class="btn margin-inline-end-16" href="tel:+1-541-643-7064">(541) 643-7064</a>
-      </div>
-      <form class="contact-form form flow" name="contact" netlify netlify-honeypot="bot-field">
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  <div class="text-center mb-6">
+    <a class="btn-secondary" href="tel:+1-541-643-7064">(541) 643-7064</a>
+  </div>
+  <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
+      <form name="contact" netlify netlify-honeypot="bot-field">
         <p class="hidden">
           <label>
             Don't fill this out if you're human: <input name="bot-field" />
           </label>
         </p>
         <input type="hidden" name="subject" data-remove-prefix value="Inquiry from malkuchsyardandtreeservice.com" />
-        <div class="form-control">
-          <label for="name" class="form-label">Name</label>
-          <input class="form-input" name="name" type="text" required>
+        <div class="mb-6">
+          <label for="name" class="block text-sm font-medium">Name</label>
+          <input class="py-3 px-4 block w-full text-md rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="name" type="text" required>
         </div>
-        <div class="form-control">
-          <label for="phone" class="form-label">Phone number</label>
-          <input class="form-input" name="phone" type="tel" required>
+        <div class="mb-6">
+          <label for="phone" class="block text-sm font-medium">Phone number</label>
+          <input class="py-3 px-4 block w-full text-md rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="phone" type="tel" required>
         </div>
-        <div class="form-control">
-          <label for="email" class="form-label">Email</label>
-          <input class="form-input" name="email" type="email" required>
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input class="py-3 px-4 block w-full text-md rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="email" type="email" required>
         </div>
-        <div class="form-control">
-          <label for="address" class="form-label">Address, City, State - where the work will be done</label>
-          <input class="form-input" name="address" type="text" required>
+        <div class="mb-6">
+          <label for="address" class="block text-sm font-medium">Address, City, State - where the work will be done</label>
+          <input class="py-3 px-4 block w-full text-md rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="address" type="text" required>
         </div>
 
-        <div class="form-control">
-          <label for="day" class="form-label">What day would work best for use to meet you at the work site?</label>
-          <select class="form-select" name="day" id="day" required>
+        <div class="mb-6">
+          <label for="day" class="block text-sm font-medium">What day would work best for use to meet you at the work site?</label>
+          <select class="block w-full px-4 py-3 rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="day" id="day" required>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
             <option value="Wednesday">Wednesday</option>
@@ -50,9 +56,9 @@ const { afterTitle, title } = Astro.props
           </select>
         </div>
         <!-- what time of day would work best for us to meet you? -->
-        <div class="form-control">
-          <label for="time" class="form-label">What time of day would work best for us to meet you?</label>
-          <select class="form-select" name="time" id="time" required>
+        <div class="mb-6">
+          <label for="time" class="block text-sm font-medium">What time of day would work best for us to meet you?</label>
+          <select class="block w-full px-4 py-3 rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="time" id="time" required>
             <option value="8:00am">8:00am</option>
             <option value="8:30am">8:30am</option>
             <option value="9:00am">9:00am</option>
@@ -74,70 +80,90 @@ const { afterTitle, title } = Astro.props
             <option value="5:00pm">5:00pm</option>
           </select>
         </div>
-        <fieldset>
+        <fieldset class="mb-6">
           <legend>
             Which services will you need?
           </legend>
-          <div class="grid-auto">
-              <div class="form-checkbox">
-                <label for="tree-removal" class="checkbox-container">
-                  Tree removal
-                  <input type="checkbox" name="services" id="tree-removal" value="Tree removal">
-                  <span class="checkmark"></span>
-                </label>
+          <div class="grid-auto space-y-2">
+            <label for="tree-removal" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
+                <input type="checkbox" name="services" id="tree-removal" value="Tree removal">
               </div>  
-              <div class="form-checkbox">
-                <label for="tree-trimming-pruning" class="checkbox-container">
-                  Tree trimming / Pruning
-                  <input type="checkbox" name="services" id="tree-trimming-pruning" value="Tree trimming / Pruning">
-                  <span class="checkmark"></span>
-                </label>
+              <strong class="font-medium text-gray-900">
+                Tree removal
+              </strong>
+            </label>
+                  
+            <label for="tree-trimming-pruning" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
+                <input type="checkbox" name="services" id="tree-trimming-pruning" value="Tree trimming / Pruning">
               </div>
-              <div class="form-checkbox">
-                <label for="tree-trimming-pruning" class="checkbox-container">
+              <strong class="font-medium text-gray-900">
+                Tree trimming / Pruning
+              </strong>
+            </label>
+
+            <label for="tree-cabling" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
+                  <input type="checkbox" name="services" id="tree-cabling" value="Tree Cabling">
+              </div>
+              <strong class="font-medium text-gray-900">
                   Tree Cabling
-                  <input type="checkbox" name="services" id="tree-trimming-pruning" value="Tree Cabling">
-                  <span class="checkmark"></span>
-                </label>
+              </strong>
+                  
+            </label>
+
+            <label for="stump-grinding" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
+                <input type="checkbox" name="services" id="stump-grinding" value="Stump grinding">
               </div>
-              <div class="form-checkbox">
-                <label for="stump-grinding" class="checkbox-container">
-                  Stump grinding
-                  <input type="checkbox" name="services" id="stump-grinding" value="Stump grinding">
-                  <span class="checkmark"></span>
-                </label>
+              <strong class="font-medium text-gray-900">
+                Stump grinding
+              </strong>
+            </label>
+
+            <label for="log-hauling" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
+                <input type="checkbox" name="services" id="log-hauling" value="Log Hauling">
               </div>
-              <div class="form-checkbox">
-                <label for="log-hauling" class="checkbox-container">
-                  Log Hauling
-                  <input type="checkbox" name="services" id="log-hauling" value="Log Hauling">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <div class="form-checkbox">
-                <label for="tree-plant-healthcare" class="checkbox-container">
-                  Tree / Plant Healthcare
+              <strong class="font-medium text-gray-900">
+                Log Hauling
+              </strong>
+            </label>
+
+            <label for="tree-plant-healthcare" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+              <div class="flex items-center">
+                &#8203;
                   <input type="checkbox" name="services" id="tree-plant-healthcare" value="Tree / Plant Healthcare">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <div class="form-checkbox">
-                <label for="other" class="checkbox-container">
-                  Other
+                </div>
+              <strong class="font-medium text-gray-900">
+                Tree / Plant Healthcare
+              </strong>
+              </label>
+              <label for="other" class="flex cursor-pointer items-start gap-4 rounded-lg border border-gray-400 p-4 transition hover:bg-gray-50 has-[:checked]:bg-blue-50">
+                <div class="flex items-center">
+                  &#8203;
                   <input type="checkbox" name="services" id="other" value="Other">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
+                </div>  
+                <strong class="font-medium text-gray-900">
+                  Other
+                </strong>
+              </label>
           </div>
         </fieldset>
-        <div class="form-control">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-input" name="message" id="message" cols="30" rows="5" placeholder="Share any additional details..."></textarea>
+        <div class="mb-6">
+          <label for="message" class="block text-sm font-medium">Message</label>
+          <textarea class="py-3 px-4 block w-full text-md rounded-lg border border-gray-400 dark:border-gray-700 bg-white dark:bg-slate-900" name="message" id="message" cols="30" rows="5" placeholder="Share any additional details..."></textarea>
         </div>
 
-        <div class="text-center">
-          <button class="btn" data-type="accent">Submit</button>
+        <div class="grid">
+          <button class="btn-primary">Submit</button>
         </div>
       </form>
   </div>
-</section>
+</WidgetWrapper>

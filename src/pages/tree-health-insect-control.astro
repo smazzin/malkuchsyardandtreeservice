@@ -1,0 +1,97 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Expert tree health & insect control treatments in Roseburg, OR and near you',
+	description: 'Expert tree health & insect control treatments in Roseburg, OR. We are a local tree service company that offers tree removal, tree trimming, stump grinding, and more. Call us today for a free estimate.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Healthy & Safe Trees"
+    title="Roseburg, OR Tree Health & Insect Control Treatments Experts"
+    subtitle="For the control of insects and diseases. Serving Roseburg, OR and surrounding areas. Call us today for a free estimate."
+    actions={[
+      { variant: 'primary', text: 'Get a FREE Estimate', href: 'get-a-free-estimate', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: '~/assets/images/services/tree-injections.jpg',
+      alt: 'Tree Health & Insect Control Treatments Image',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/hero.jpg',
+      alt: 'Professional tree removal services in Roseburg, OR',
+    }}
+    callToAction={{
+      target: '_self',
+      text: 'Get a FREE Estimate',
+      href: 'get-a-free-estimate',
+      icon: 'tabler:square-rounded-arrow-right',
+    }}
+  >
+    <Fragment slot="content">
+      <!-- <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What we offer as professional arborists</h3> -->
+      <p class="text-xl text-muted mb-6 dark:text-slate-300">Heat stresses evergreen trees because the dry soil conditions make it more difficult for them to absorb water to make sap which is one of their natural defenses. When trees become stressed from abiotic factors, they become more susceptible to biotic attacks. One of the signs of stress in an evergreen tree is needles changing color. A long slow soak with a garden hose can help trees suffering from heat stress to survive. The good news is that most bark beetles do not attack healthy trees. </p>
+      <p class="text-xl text-muted mb-6 dark:text-slate-300">If your trees are being attacked by disease or insects we have treatments that can help. But it is important to act quickly to diagnose the issues before it is too late. 🤒🤕😵 With bark beetles, chemical treatments are only affective if they are applied before bark beetles are present or during the early stages of an infestation cycle. The first sign of a bark beetle infestation is saw dust around the trunk of the tree. It is especially important now to be on the lookout for a new Invader to Oregon; Emerald Ash Borer(EAB). Injections can be administered any time of year. Trees benefit the most if they are administered in the early spring.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <!-- <Content
+
+    image={{
+      src: '~/assets/images/hero.jpg',
+      alt: 'Professional tree removal services in Roseburg, OR',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-xl text-muted mb-6 dark:text-slate-300">This was a Douglas Fir that had brown rot and fell over one of our clients driveway, blocking access to their house after a winter storm. Tree health is important, especially with large trees that are within target range of your home, or other structures. 😬😨 Don't ignore warning signs of rot such as fungal fruiting bodies; mushrooms, or conks, forming on your trees.🍄 If your concerned about trees on or near your property call or message us we'd be happy to take a look.😁</p>
+    </Fragment>
+  </Content> -->
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>

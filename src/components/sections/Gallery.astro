@@ -1,25 +1,29 @@
 ---
 import { Image } from 'astro:assets';
-const imageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
 
-const { title, description } = Astro.props
+// get only 8 images
+const allImageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
+const imageFiles = allImageFiles.slice(0, 8);
+// const imageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
+
+const { title, description, id } = Astro.props
 ---
 
-<section id="gallery">
+<section class="relative px-[5%] py-8 md:py-12 lg:py-14" {...id ? { id } : {}}>
   <div class="container margin-block-36">
-    <ul id="my-gallery" class="list gallery">
+    <ul id="my-gallery" class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8 mb-6">
       {
       imageFiles.map((img, index) => (
         <li class="grid-item hidden" id={`img-${index}`}>
             <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.default.src} data-src={img.default.src}>
-            <Image width={300} height={300} src={img.default} alt={`Malkuch's Yard and Tree Service Gallery - image ${index}`} />
+            <Image class={'object-cover object-center w-full h-60 max-w-full rounded-sm'} width={300} height={300} src={img.default} alt={`Malkuch's Tree Service Gallery - image ${index}`} />
           </a>
         </li>
       ))
       }
     </ul>
-    <button class="btn margin-block-start-8" data-type="outline" onclick="previousPage()">Previous</button>
-    <button class="btn margin-block-start-8" data-type="outline" onclick="nextPage()">Next</button>
+    <!-- <button class="btn-secondary" onclick="previousPage()">Previous</button>
+    <button class="btn-secondary" onclick="nextPage()">Next</button> -->
   </div>
 </section>
 

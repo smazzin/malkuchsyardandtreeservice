@@ -1,17 +1,148 @@
 ---
-import Base from '../layouts/Base.astro'
-import Header from '../components/sections/Header.astro'
-import Services from '../components/sections/Services.astro'
-import About from '../components/sections/About.astro'
-import Gallery from '../components/sections/Gallery.astro'
-import Reviews from '../components/sections/Reviews.astro'
-import Contact from '../components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Services from '~/components/widgets/Services.astro';
+import Content2 from '~/components/widgets/Content2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Gallery from '~/components/sections/Gallery.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+// import ContactUs from '~/components/widgets/Contact.astro';
+import Contact from '~/components/sections/Contact.astro'
+
+const metadata = {
+  title: 'Tree Service in Roseburg, OR and Near You',
+  ignoreTitleTemplate: false,
+}
 ---
-<Base>
-  <Header />
-  <Services title='Experienced arborists providing tree care services'/>
-  <About title="About Malkuch's Yard and Tree Service" />
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get a FREE Estimate',
+        href: '/get-a-free-estimate',
+        target: '_blank',
+        icon: 'tabler:check',
+      },
+      // { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero.jpg', alt: 'Malkuchs Tree Service - Climbing a Tree' }}
+  >
+    <Fragment slot="title">
+      Expert Tree Services in Roseburg and Surrounding Areas
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Malkuch's Tree Service has over 16 years of experience in Tree Service and Horticulture, we are dedicated to providing the best service possible. Explore our range of services or get in touch with us today. License bonded and insured.
+    </Fragment>
+  </Hero>
+
+  <Content2
+    image={{
+        src: '~/assets/images/grouped-trees.svg',
+        alt: 'Experienced arborists providing tree care services',
+      }}
+    >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight text-primary sm:text-3xl mb-2">Experienced arborists providing tree care services in Roseburg, OR and near you</h2>
+    </Fragment>
+  </Content2>
+
+  <Services
+  id="services"
+  tagline="Our Services"
+  services={[
+    {
+      title: 'Tree Trimming & Pruning',
+      service: 'Our tree trimming and pruning services help maintain the health and aesthetics of your trees.',
+      image: {
+        src: '~/assets/images/services/tree-trimming-pruning.jpg',
+        alt: 'Tree Trimming & Pruning',
+      },
+      serviceLink: '/tree-trimming-pruning',
+    },
+    {
+      title: 'Stump Grinding',
+      service: 'We utilize advanced equipment to efficiently grind and remove tree stumps.',
+      image: {
+        src: '~/assets/images/services/stump-grinding.jpg',
+        alt: 'Stump Grinding',
+      },
+      serviceLink: '/stump-grinding',
+    },
+    {
+      title: 'Tree Cabling & Bracing',
+      service: 'Our skilled arborists team possesses thorough understanding of the specific requirements of trees in the Pacific Northwest and how to protect them.',
+      image: {
+        src: '~/assets/images/services/tree-cabling-bracing.jpg',
+        alt: 'Tree Cabling & Bracing',
+      },
+      serviceLink: '/tree-cabling-bracing',
+    },
+    {
+      title: 'Tree Health & Insect Control Treatments',
+      service: 'For the control of insects and diseases.',
+      image: {
+        src: '~/assets/images/services/tree-injections.jpg',
+        alt: 'Tree Health & Insect Control Treatments',
+      },
+      serviceLink: '/tree-health-insect-control',
+    },
+    {
+      title: 'Tree Removal',
+      service: "We offer professional and safe tree removal services for residential and commercial properties.",
+      image: {
+        src: '~/assets/images/services/tree-removal.jpg',
+        alt: 'Tree Removal',
+      },
+      serviceLink: '/tree-removal',
+    },
+  ]}
+/>
+
+<Features2
+title="About Malkuch's Tree Service"
+image={{
+  src: '~/assets/images/trees.svg',
+  alt: 'silhouette trees',
+}}>
+  <Fragment slot="content">
+    <p class="mb-2">Hi folks my name is Gary Malkuch. I'm a born and raised native Oregonian. Ever since I was a kid I've always enjoyed science and biology especially when it comes to nature. I love my job because I get to put that into practice. I started working for myself out of high school in 2008.</p>
+    <p class="mb-2">I feel privileged to have worked for and been trained by, in my opinion, some of the best gardeners, arborist, and tree climbers, that the Pacific Northwest has to offer. I have received tree climbing training from 4 different expert arborists. I have received tree work training from 5 expert tree fallers. And I have also received training and supervision by 2 Master Gardeners. I have taken all of that knowledge and training and put it into my company. I have a keen interest in the health and preservation of trees, and the safety and protection of my clients.</p>
+    <p>So whether trimming, removing, cabling, stump grinding, fertilizing, or injecting your trees I want to make sure that you get the best service and experience possible and that your trees are healthy and that you are happy with them. Remember a healthy tree is a safe tree. So contact us today to set up an appointment. Check out our latest updates on Google for some great pictures, updates, and interesting facts. You can also check out Facebook and Instagram for more pictures. Thanks for checking out our website and we hope to hear from you soon.</p>
+  </Fragment>
+</Features2>
+
   <Gallery title="Gallery" />
-  <Reviews title="Customer testimonials" afterTitle="Read testimonials from our satisfied clients" />
-  <Contact title="Contact us" afterTitle='Have a question or need an estimate?' />
-</Base>
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>

@@ -1,5 +1,5 @@
 site:
-  name: Malkuch's Yard and Tree Service
+  name: Malkuchs Tree Service
   site: 'https://malkuchsyardandtreeservice.com'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Malkuch's Yard and Tree Service
-    template: '%s — Malkuch's Yard and Tree Service'
-  description: "Malkuch's Yard and Tree Service description"
+    default: Malkuch's Tree Service
+    template: '%s — Malkuchs Tree Service'
+  description: "Malkuch's Tree Service has over 16 years of experience in Tree Service & Horticulture. Licensed & Insured. Serving the Greater Roseburg, OR Area."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Malkuch's Yard and Tree Service
+    site_name: Malkuchs Tree Service
     images:
       - url: '~/assets/images/malkuchs-tree-service-logo.webp'
         width: 1200

@@ -1,0 +1,82 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Expert tree cabling & bracing in Roseburg, OR and near you',
+	description: 'Expert tree cabling & bracing in Roseburg, OR. We are a local tree service company that offers tree removal, tree trimming, stump grinding, and more. Call us today for a free estimate.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Tree Cabling & Bracing"
+    title="Roseburg, OR Tree Cabling & Bracing Experts"
+    subtitle="Our skilled arborists team possesses thorough understanding of the specific requirements of trees in the Pacific Northwest and how to protect them. Serving Roseburg, OR and surrounding areas. Call us today for a free estimate."
+    actions={[
+      { variant: 'primary', text: 'Get a FREE Estimate', href: 'get-a-free-estimate', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: '~/assets/images/services/tree-cabling-bracing.jpg',
+      alt: 'Tree Cabling & Bracing Image',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    image={{
+      src: '~/assets/images/tree-cabling-bracing-2.jpg',
+      alt: 'Tree cabling & bracing services in Roseburg, OR',
+    }}
+    callToAction={{
+      target: '_self',
+      text: 'Get a FREE Estimate',
+      href: 'get-a-free-estimate',
+      icon: 'tabler:square-rounded-arrow-right',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What are the benefits of a tree guard cabling system?</h3>
+      <p class="text-xl text-muted mb-6 dark:text-slate-300">Number 1, no drilling of holes that could damage the tree. Number 2, the dynamic material in the system reacts to real-world stress. This is a 4,000 lb system in this Aseculus hippocastanum (Horse Chestnut). The slings also have very easy to see orange overload indicators. These cabling systems offer extra protection for your trees from structural failure especially in an extreme wind, snow, or ice storm. Dont be fooled into thinking rope is weak, the cabling ropes we install have a 4,000lbs to 18,000lbs breaking strength. We also offer traditional extra-high-strength 3/8-in cable (15,400lbs breaking strength), this does require drilling. Not all trees can be cabled. All tree cabling systems either, wire cable or rope should be inspect every year. Ideally trees should be cabled in the spring or summer time.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>

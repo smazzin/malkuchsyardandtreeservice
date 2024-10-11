@@ -1,0 +1,21 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Contact from '~/components/sections/Contact.astro'
+
+const metadata = {
+  title: 'Get A Free Estimate',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Get A Free Estimate" />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Fill out the form below to get a free estimate.' 
+/>
+
+</Layout>

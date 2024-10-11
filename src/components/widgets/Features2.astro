@@ -1,35 +1,37 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
 import Image from '~/components/common/Image.astro';
-import type { Features as Props } from '~/types';
+import type { Features, Content } from '~/types';
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   image = await Astro.slots.render('image'),
+  content = await Astro.slots.render('content'),
 
   id,
   classes = { headline: {
     container: 'text-left max-w-3xl',
-    tagline: 'text-base text-white font-bold tracking-wide uppercase',
-    title: 'text-white text-3xl md:text-4xl',
-    subtitle: 'text-xl text-white',
+    tagline: 'text-base font-bold tracking-wide uppercase',
+    title: 'text-3xl md:text-4xl text-primary',
+    subtitle: 'text-xl',
   } },
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 ---
 
-<section class="relative px-[5%] py-16 md:py-24 lg:py-28" {...id ? { id } : {}}>
+<section class="relative px-[5%] py-8 md:py-12 lg:py-14" {...id ? { id } : {}}>
   <div
   class="container grid grid-cols-1 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20 lg:gap-y-24"
 >
   <Headline title={title} tagline={tagline} classes={classes?.headline as Record<string, string>} />
     {
       subtitle && (
-        <p class="text-white text-lg md:text-xl">{subtitle}</p>
+        <p class="text-lg md:text-xl">{subtitle}</p>
       )
     }
+    {content && <div class="text-base md:text-md" set:html={content} />}
 </div>
   {
     image && (
@@ -48,7 +50,7 @@ const {
             {...image}
           />
         )}
-        <div class="absolute inset-0 bg-black/65"></div>
+        <div class="absolute inset-0"></div>
         <slot name="bg">
           {bg ? <Fragment set:html={bg} /> : null}
         </slot>

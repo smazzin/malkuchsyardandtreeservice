@@ -1,0 +1,101 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Contact from '~/components/sections/Contact.astro'
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Expert stump grinding in Roseburg, OR and near you',
+	description: 'Expert stump grinding in Roseburg, OR. We are a local tree service company that offers tree removal, tree trimming, stump grinding, and more. Call us today for a free estimate.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Professional & Safe"
+    title="Roseburg, OR Stump Grinding Experts"
+    subtitle="We utilize advanced equipment to efficiently grind and remove tree stumps. Serving Roseburg, OR and surrounding areas. Call us today for a free estimate."
+    actions={[
+      { variant: 'primary', text: 'Get a FREE Estimate', href: 'get-a-free-estimate', icon: 'tabler:square-rounded-arrow-right' },
+    ]}
+    image={{
+      src: '~/assets/images/services/stump-grinding.jpg',
+      alt: 'Stump Grinding Image',
+    }}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        // title: 'Complete Tree Removals',
+        description:
+          'Complete Tree Removals',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        // title: 'Debris Removal',
+        description:
+          'Debris Removal',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        // title: 'Wood Removal',
+        description:
+          'Wood Removal',
+          icon: 'tabler:christmas-tree',
+      },
+      {
+        // title: 'Stump Grinding',
+        description:
+          'Stump Grinding',
+          icon: 'tabler:christmas-tree',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/stump-grinding-2.jpg',
+      alt: 'Professional stump grinding services in Roseburg, OR',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">What We Offer As Professional Arborists</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Customer Testimonials"
+    subtitle='Read testimonials from our satisfied clients'
+    testimonials={[
+      {
+        testimonial: `Gary did a fantastic job. He promptly returned my initial phone call and had reasonable pricing (I called some other well known arborists but they were too busy to even return my calls- and others were booked months out). When I asked Gary questions about my mature pear and camellia trees, he had very knowledgable advice about their growth behavior, which I appreciated. Lastly, he showed up on time and got the job done very efficiently. Cleaned up all the mess before he left too! Will be calling for all my future tree trimming and pruning needs.`,
+        name: 'Emily L.',
+      },
+      {
+        testimonial: `Very friendly and knowledgable! Punctual and got the job done right. I appreciated the safety measures they took and their work ethic. I'll definitely be using them again when I need more tree work done!`,
+        name: 'Marcos F.',
+      },
+      {
+        testimonial: `Every time I've called for service they're here in just a few days. They are hard working, thorough, honest and friendly! We highly recommend using Malkuch Tree Service!`,
+        name: 'S C.',
+      },
+    ]}
+    callToAction={{
+      target: '',
+      text: 'See all our reviews on Google',
+      href: 'https://maps.app.goo.gl/RNi1VWp485M9kw4i8?g_st=ic',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <Contact 
+  title="Contact us" 
+  subtitle='Have a question or need an estimate?' 
+/>
+</Layout>
