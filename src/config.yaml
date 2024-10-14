@@ -2,9 +2,9 @@ site:
   name: Malkuchs Tree Service
   site: 'https://malkuchsyardandtreeservice.com'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: null
 
 # Default SEO metadata
 metadata:
