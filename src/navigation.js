@@ -55,7 +55,7 @@ export const headerData = {
   ],
   actions: [
     {
-      text: 'Get a FREE Estimate', href: 'get-a-free-estimate', class: 'outline', target: '_self'
+      text: 'Get a FREE Estimate', href: '/get-a-free-estimate/', class: 'outline', target: '_self'
     },
   ],
   actionsAlt: [
@@ -70,18 +70,18 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'Tree Removal', href: '/tree-removal' },
-        { text: 'Tree Trimming & Pruning', href: '/tree-trimming-pruning' },
-        { text: 'Stump Grinding', href: '/stump-grinding' },
-        { text: 'Tree Cabling & Bracing', href: '/tree-cabling-bracing' },
-        { text: 'Tree Health & Insect Control Treatments', href: '/tree-health-insect-control' },
+        { text: 'Tree Removal', href: '/tree-removal/' },
+        { text: 'Tree Trimming & Pruning', href: '/tree-trimming-pruning/' },
+        { text: 'Stump Grinding', href: '/stump-grinding/' },
+        { text: 'Tree Cabling & Bracing', href: '/tree-cabling-bracing/' },
+        { text: 'Tree Health & Insect Control Treatments', href: '/tree-health-insect-control/' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { text: 'About', href: '/about' },
-        { text: 'Contact', href: '/contact' },
+        { text: 'About', href: '/about/' },
+        { text: 'Contact', href: '/contact/' },
       ],
     },
     {
