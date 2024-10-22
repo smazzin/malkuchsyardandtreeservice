@@ -33,7 +33,7 @@ export default defineConfig({
     }),
     sitemap({
         filter: (page) => 
-          page !== '/thank-you/'
+          page !== 'https://malkuchsyardandtreeservice.com/thank-you/'
       }),
     mdx(),
     icon({
