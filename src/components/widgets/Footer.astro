@@ -34,6 +34,12 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
           <p class="text-sm text-muted">Oregon CCB #230732</p>
+          <p class="text-sm text-muted mt-2">Payments Accepted</p>
+          <div class="flex gap-2">
+            <Icon name="tabler:brand-visa" class="w-8 h-8 inline-block" title='Visa' />
+            <Icon name="tabler:brand-mastercard" class="w-8 h-8 inline-block" title='Mastercard' />
+            <Icon name="tabler:brand-paypal" class="w-8 h-8 inline-block" title='PayPal' />
+          </div>
         </div>
         <div class="text-sm text-muted flex gap-1">
           {
