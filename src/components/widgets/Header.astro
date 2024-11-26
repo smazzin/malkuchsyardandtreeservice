@@ -4,6 +4,7 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
+import Image from '~/components/common/Image.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash } from '~/utils/permalinks';
@@ -47,6 +48,9 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+
+const isaLogo = '~/assets/images/isa-membership-logo-small.png';
+
 ---
 
 <header
@@ -75,6 +79,13 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'left' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
+        <Image
+          class="hidden md:block w-20 h-20"
+          src={isaLogo}
+          alt="ISA Membership Logo"
+          width="80"
+          height="80"
+        />
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />

@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
 
 interface Link {
   text?: string;
@@ -24,6 +25,8 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const isaLogo = '~/assets/images/isa-membership-logo-small.png';
+const siteLogo = '~/assets/images/malkuchs-tree-service-logo.webp';
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 not-prose']}>
@@ -31,8 +34,25 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+          <div class="flex gap-4 items-top">
+              <a class="inline-block font-bold text-xl" href={getHomePermalink()}>
+                <Image
+                  class="md:flex my-2"
+                  layout="contained"
+                  src={siteLogo}
+                  alt="Malkuchs Tree Service Logo"
+                  width="120"
+                  height="113"
+                />
+            </a>
+            <Image
+              class="md:flex my-2 w-36 h-36"
+              src={isaLogo}
+              alt="ISA Membership Logo"
+              width="94"
+              height="94"
+            />
+          </div>
           <p class="text-sm text-muted">Oregon CCB #230732</p>
           <p class="text-sm text-muted mt-2">Payments Accepted</p>
           <div class="flex gap-2">
@@ -40,7 +60,6 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             <Icon name="tabler:brand-mastercard" class="w-8 h-8 inline-block" title='Mastercard' />
             <Icon name="tabler:brand-paypal" class="w-8 h-8 inline-block" title='PayPal' />
           </div>
-        </div>
         <div class="text-sm text-muted flex gap-1">
           {
             secondaryLinks.map(({ text, href }, index) => (
