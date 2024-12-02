@@ -11,7 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
+// import { GoogleTagmanager, GoogleTagmanagerNoscript } from '@digi4care/astro-google-tagmanager';
 
 // Comment the line below to disable View Transitions
 // import { ViewTransitions } from 'astro:transitions';
@@ -36,14 +36,14 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-    <GoogleTagmanager id="GTM-W3TB6T6G" />
+    <!-- <GoogleTagmanager id="GTM-W3TB6T6G" /> -->
 
     <!-- Comment the line below to disable View Transitions -->
     <!-- <ViewTransitions fallback="swap" /> -->
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
-    <GoogleTagmanagerNoscript id="GTM-W3TB6T6G" />
+    <!-- <GoogleTagmanagerNoscript id="GTM-W3TB6T6G" /> -->
     <slot />
     <BasicScripts />
   </body>
