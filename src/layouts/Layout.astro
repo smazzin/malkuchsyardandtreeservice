@@ -11,7 +11,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-import TagsHead from '~/components/common/TagsHead.astro';
+// import TagsHead from '~/components/common/TagsHead.astro';
 // import TagsBody from '~/components/common/TagsBody.astro';
 
 // Comment the line below to disable View Transitions
@@ -37,12 +37,23 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-    <TagsHead />
+    <!-- <TagsHead /> -->
     <!-- Comment the line below to disable View Transitions -->
     <!-- <ViewTransitions fallback="swap" /> -->
+
+    <script is:inline src="https://www.googletagmanager.com/gtag/js?id=GTM-W3TB6T6G"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'GTM-W3TB6T6G');
+    </script>
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W3TB6T6G"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- <TagsBody /> -->
     <slot />
     <BasicScripts />
