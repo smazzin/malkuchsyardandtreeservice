@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Malkuch's Tree Service",
+  "short_name": "Malkuch's Tree Service",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
