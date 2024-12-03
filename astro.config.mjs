@@ -20,9 +20,9 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const hasExternalScripts = false;
-const whenExternalScripts = (items = []) =>
-  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
+// const hasExternalScripts = false;
+// const whenExternalScripts = (items = []) =>
+//   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
   output: 'static',
@@ -53,11 +53,12 @@ export default defineConfig({
       },
     }),
 
-    ...whenExternalScripts(() =>
-      partytown({
-        config: { forward: ['dataLayer.push'] },
-      })
-    ),
+    partytown({
+      // Example: Add dataLayer.push as a forwarding-event.
+      config: {
+        forward: ['dataLayer.push'],
+      },
+    }),
 
     compress({
       CSS: true,
