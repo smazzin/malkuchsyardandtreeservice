@@ -67,8 +67,6 @@ analytics:
   vendors:
     googleAnalytics:
       id: null # or "G-XXXXXXXXXX"
-    googleTagManager:
-      id: GTM-W3TB6T6G # or "GTM-XXXXXXX"
 
 ui:
   theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
