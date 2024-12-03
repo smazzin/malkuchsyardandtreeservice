@@ -7,7 +7,7 @@ export interface Props {
 const { id = "GTM_MEASUREMENT_ID"} = Astro.props;
 ---
 
-<script is:inline async define:vars={{ id }}>{(
+<script is:inline async define:vars={{ id }} type="text/partytown">{(
   function(w,d,s,l,i) {
     w[l]=w[l]||[];
     w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
