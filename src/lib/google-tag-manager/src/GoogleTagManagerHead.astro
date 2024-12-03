@@ -7,7 +7,7 @@ export interface Props {
 const { id = "GTM_MEASUREMENT_ID"} = Astro.props;
 ---
 
-<script is:inline>
+<!-- <script is:inline>
   window.dataLayer = window.dataLayer || [];
 </script>
 
@@ -20,4 +20,13 @@ const { id = "GTM_MEASUREMENT_ID"} = Astro.props;
     j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
     f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer', id );}
+</script> -->
+
+<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag(){dataLayer.push();}
+  gtag('js', new Date());
+
+  gtag('config', id);
 </script>
