@@ -22,8 +22,8 @@ const { id = "GTM_MEASUREMENT_ID"} = Astro.props;
   })(window,document,'script','dataLayer', id );}
 </script> -->
 
-<script type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
-<script type="text/partytown">
+<script is:inline type="text/partytown" src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+<script is:inline type="text/partytown">
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag(){dataLayer.push();}
   gtag('js', new Date());
