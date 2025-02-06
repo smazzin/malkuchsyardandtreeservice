@@ -49,7 +49,7 @@ const {
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
-const isaLogo = '~/assets/images/isa-membership-logo-small.png';
+const isaLogo = '~/assets/images/ISA-member-logo.jpg';
 
 ---
 
@@ -79,13 +79,16 @@ const isaLogo = '~/assets/images/isa-membership-logo-small.png';
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'left' }, 'flex justify-between']}>
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
-        <Image
-          class="hidden md:block w-20 h-20"
-          src={isaLogo}
-          alt="ISA Membership Logo"
-          width="80"
-          height="80"
-        />
+        <span class="block text-xs text-muted mt-2">
+          <Image
+            class="hidden md:block"
+            src={isaLogo}
+            alt="ISA Membership Logo"
+            width={100}
+            height={136}
+          />
+          ISA member on staff
+        </span>
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />

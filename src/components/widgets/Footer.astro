@@ -25,7 +25,7 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
-const isaLogo = '~/assets/images/isa-membership-logo-small.png';
+const isaLogo = '~/assets/images/ISA-member-logo.jpg';
 const siteLogo = '~/assets/images/malkuchs-tree-service-logo.webp';
 ---
 
@@ -49,10 +49,11 @@ const siteLogo = '~/assets/images/malkuchs-tree-service-logo.webp';
               class="md:flex my-2 w-36 h-36"
               src={isaLogo}
               alt="ISA Membership Logo"
-              width="94"
-              height="94"
+              width={100}
+              height={136}
             />
           </div>
+          <span class="text-sm text-muted mt-2">ISA member on staff</span>
           <p class="text-sm text-muted">Oregon CCB #230732</p>
           <p class="text-sm text-muted mt-2">Payments Accepted</p>
           <div class="flex gap-2">
