@@ -1,5 +1,5 @@
 ---
-title: About Malkuch’s Yard and Tree Service
+title: About Malkuch’s Tree Service
 type: about
 ---
 
