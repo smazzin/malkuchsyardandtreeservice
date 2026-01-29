@@ -1,7 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { defineConfig, squooshImageService } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
@@ -26,7 +26,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   output: 'static',
-
+  site: 'https://malkuchsyardandtreeservice.com/',
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -79,7 +79,7 @@ export default defineConfig({
   ],
 
   image: {
-    service: squooshImageService(),
+    service: passthroughImageService(),
     domains: ['cdn.pixabay.com'],
   },
 
