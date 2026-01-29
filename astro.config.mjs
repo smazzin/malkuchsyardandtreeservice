@@ -31,10 +31,6 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap({
-        filter: (page) => 
-          page !== 'https://malkuchsyardandtreeservice.com/thank-you/'
-      }),
     mdx(),
     icon({
       include: {
@@ -52,14 +48,14 @@ export default defineConfig({
         ],
       },
     }),
-
+    
     partytown({
       // Example: Add dataLayer.push as a forwarding-event.
       config: {
         forward: ['dataLayer.push'],
       },
     }),
-
+    
     compress({
       CSS: true,
       HTML: {
@@ -72,9 +68,13 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
+    
     astrowind({
       config: './src/config.yaml',
+    }),
+    sitemap({
+      filter: (page) => 
+      page !== 'https://malkuchsyardandtreeservice.com/thank-you/'
     }),
   ],
 
