@@ -1,0 +1,74 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: "Sitemap | Malkuch's Tree Service",
+  description: "Browse all pages on the Malkuch's Tree Service website — services, service areas, and company information.",
+};
+
+const sections = [
+  {
+    title: 'Main',
+    links: [
+      { text: 'Home', href: '/' },
+      { text: 'About', href: '/about/' },
+      { text: 'Contact', href: '/contact/' },
+      { text: 'Get a Free Estimate', href: '/get-a-free-estimate/' },
+    ],
+  },
+  {
+    title: 'Services',
+    links: [
+      { text: 'Tree Removal', href: '/tree-removal/' },
+      { text: 'Tree Trimming & Pruning', href: '/tree-trimming-pruning/' },
+      { text: 'Stump Grinding', href: '/stump-grinding/' },
+      { text: 'Tree Cabling & Bracing', href: '/tree-cabling-bracing/' },
+      { text: 'Tree Health & Insect Control', href: '/tree-health-insect-control/' },
+    ],
+  },
+  {
+    title: 'Service Areas',
+    links: [
+      { text: 'Roseburg, OR', href: '/roseburg-tree-service/' },
+      { text: 'Glide, OR', href: '/glide-tree-service/' },
+      { text: 'Sutherlin, OR', href: '/sutherlin-tree-service/' },
+      { text: 'Winston, OR', href: '/winston-tree-service/' },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Sitemap"
+    title="All Pages"
+    subtitle="Find every page on our site, organized by category."
+  />
+
+  <section class="relative not-prose">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {sections.map(({ title, links }) => (
+          <div>
+            <h2 class="text-xl font-bold text-primary border-b border-gray-200 pb-3 mb-4">
+              {title}
+            </h2>
+            <ul class="space-y-3">
+              {links.map(({ text, href }) => (
+                <li>
+                  <a
+                    href={href}
+                    class="text-default hover:text-primary transition duration-150 ease-in-out"
+                  >
+                    {text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

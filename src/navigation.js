@@ -96,6 +96,7 @@ export const footerData = {
   secondaryLinks: [
     // { text: 'Terms', href: getPermalink('/terms') },
     // { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Sitemap', href: '/sitemap/' },
   ],
   socialLinks: [
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/malkuchs_tree_service/' },
