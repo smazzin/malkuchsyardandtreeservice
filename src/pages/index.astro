@@ -4,6 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Services from '~/components/widgets/Services.astro';
 import Content2 from '~/components/widgets/Content2.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Team from '~/components/widgets/Team.astro';
 import Gallery from '~/components/sections/Gallery.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 // import ContactUs from '~/components/widgets/Contact.astro';
@@ -113,6 +114,43 @@ image={{
     <p>So whether trimming, removing, cabling, stump grinding, fertilizing, or injecting your trees I want to make sure that you get the best service and experience possible and that your trees are healthy and that you are happy with them. Remember a healthy tree is a safe tree. So contact us today to set up an appointment. Check out our latest updates on Google for some great pictures, updates, and interesting facts. You can also check out Facebook and Instagram for more pictures. Thanks for checking out our website and we hope to hear from you soon.</p>
   </Fragment>
 </Features2>
+
+  <Team
+    id="team"
+    tagline="Meet the Team"
+    title="The Malkuch Tree Service Crew"
+    subtitle=""
+    columns={3}
+    members={[
+      {
+        name: 'Gary Malkuch',
+        role: 'Owner; Climber/Bucket Operator, Crew Leader, Office/Estimator ',
+        image: {
+          src: '~/assets/images/gary-malkuch.jpg',
+          alt: 'Gary Malkuch',
+        },
+        bio: 'Gary Malkuch is a Roseburg Oregon native and is a Professional Member of the International Society of Arbor Culture. His background is in Tree Service, (all phases including; technical rigging, saftey certified chainsaw operator, and climbing specialist), as well as, timber falling, heavy equipment operator, and Landscaping; Installation and Maintenance. He will be the one you talk to throughout the entire process. He possesses a great knowledge of Trees and Plants, their names, and their Healthcare requirements. His favorite part of tree service is trimming, and disease prevention. '
+      },
+      {
+        name: 'Mary Malkuch ',
+        role: 'Ground worker; Technical Rigging Specialist, Flagging, Debris Clean up',
+        image: {
+          src: '~/assets/images/mary-malkuch.jpg',
+          alt: 'Mary Malkuch ',
+        },
+        bio: 'Mary is a Montana native. She is a saftey trained, and certified chainsaw operator. She has become a technical expert in rigging and usually talks the crew into doing things more efficiently, and safer than they already were. She always has an eye out for everyone`s safety, including the crew, the homeowner, and the public. She is also the one that controls our content on Facebook. Not surprising, her favorite part of tree service is technical rigging for trimming, and removals.'
+      },
+      {
+        name: 'Omar Hernandez ',
+        role: 'Ground Worker; Technical Rigging Specialist, Flagger, Debris Removal',
+        image: {
+          src: '~/assets/images/services/tree-removal.jpg',
+          alt: 'Omar Hernandez ',
+        },
+        bio: 'Omar is a Southern California native. He is a super friendly hard worker. As well as a saftey trained chainsaw operator, and Technical Rigging Specialist. He usually manages to keep the crew laughing all day. His Favorite part of tree service is seeing the transformation of before and after, and being part of the process.',
+      },
+    ]}
+  />
 
   <Gallery title="Gallery" />
 
