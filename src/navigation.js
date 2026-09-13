@@ -90,6 +90,7 @@ export const footerData = {
         { text: 'Roseburg, OR'},
         { text: '(541) 643-7064', href: 'tel:541-643-7064' },
         // { text: 'info@malkuchsyardandtreeservice.com', href: 'mailto:malkuchsyardandtreeservice.com' },
+        { text: 'Monday-Friday 8am-5pm' },
       ],
     }
   ],
