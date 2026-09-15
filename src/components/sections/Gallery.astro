@@ -1,10 +1,24 @@
 ---
 import { Image } from 'astro:assets';
+import galleryImage95 from '~/img/gallery/gallery_image95.jpg';
+import galleryImage96 from '~/img/gallery/gallery_image96.jpg';
+import galleryImage97 from '~/img/gallery/gallery_image97.jpg';
+import galleryImage98 from '~/img/gallery/gallery_image98.jpg';
+import galleryImage99 from '~/img/gallery/gallery_image99.jpg';
+import galleryImage100 from '~/img/gallery/gallery_image100.jpg';
+import galleryImage101 from '~/img/gallery/gallery_image101.jpg';
+import galleryImage102 from '~/img/gallery/gallery_image102.jpg';
 
-// get only 8 images
-const allImageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
-const imageFiles = allImageFiles.slice(0, 8);
-// const imageFiles = await Astro.glob('/src/img/gallery/*.{jpeg,jpg,png,gif}');
+const imageFiles = [
+  galleryImage95,
+  galleryImage96,
+  galleryImage97,
+  galleryImage98,
+  galleryImage99,
+  galleryImage100,
+  galleryImage101,
+  galleryImage102,
+];
 
 const { title, description, id } = Astro.props
 ---
@@ -15,8 +29,8 @@ const { title, description, id } = Astro.props
       {
       imageFiles.map((img, index) => (
         <li class="grid-item hidden" id={`img-${index}`}>
-            <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.default.src} data-src={img.default.src}>
-            <Image class={'object-cover object-center w-full h-60 max-w-full rounded-sm'} width={300} height={300} src={img.default} alt={`Malkuch's Tree Service Gallery - image ${index}`} />
+            <a data-pswp-width="1200" data-pswp-height="1600" class="image" href={img.src} data-src={img.src}>
+            <Image class={'object-cover object-center w-full h-60 max-w-full rounded-sm'} width={300} height={300} src={img} alt={`Malkuch's Tree Service Gallery - image ${index}`} />
           </a>
         </li>
       ))
